@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
         } else {
-            getSupportFragmentManager().popBackStack();
             super.onBackPressed();
         }
     }

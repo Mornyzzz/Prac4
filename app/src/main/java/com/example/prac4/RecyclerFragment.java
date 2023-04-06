@@ -51,7 +51,7 @@ public class RecyclerFragment extends Fragment {
         adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                Log.d(TAG, "RecyclerView: Element " + position);
+                Log.d(TAG, "RecyclerView: Element " + (position + 1));
                 Toast.makeText(getActivity(), "RecyclerView: Element " + (position + 1), Toast.LENGTH_SHORT).show();
             }
         });

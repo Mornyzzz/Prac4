@@ -56,7 +56,7 @@ public class ListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id)
             {
-                Log.d(TAG, "ListView: Element " + position);
+                Log.d(TAG, "ListView: Element " + (position + 1));
                 Toast.makeText(getActivity(), "ListView: Element " + (position + 1), Toast.LENGTH_SHORT).show();
             }
         });
