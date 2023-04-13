@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,19 +26,17 @@ public class BlankFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
         View v = inflater.inflate(R.layout.fragment_blank, container, false);
+
+        EditText input_text = v.findViewById(R.id.input);
 
         Button button1 = v.findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle result = new Bundle();
-                FragmentTransaction fTrans = getFragmentManager().beginTransaction();
-                fTrans.replace(R.id.fragment1, new ListFragment());
-                fTrans.addToBackStack(null);
-                fTrans.commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("1", String.valueOf(input_text.getText()));
+                Navigation.findNavController(view).navigate(R.id.action_blank_to_list, bundle);
             }
         });
 
@@ -45,11 +44,9 @@ public class BlankFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle result = new Bundle();
-                FragmentTransaction fTrans = getFragmentManager().beginTransaction();
-                fTrans.replace(R.id.fragment1, new RecyclerFragment());
-                fTrans.addToBackStack(null);
-                fTrans.commit();
+                Bundle bundle = new Bundle();
+                bundle.putString("1", String.valueOf(input_text.getText()));
+                Navigation.findNavController(view).navigate(R.id.action_blank_to_recycler, bundle);
             }
         });
         return v;

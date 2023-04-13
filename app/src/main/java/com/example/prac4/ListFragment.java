@@ -44,9 +44,12 @@ public class ListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ListView listView = view.findViewById(R.id.listView);
 
-        List<String> items = new ArrayList<>(45);
+        String text = getArguments().getString("1");
+
+        List<String> items = new ArrayList<>(200);
         for (int i = 1; i <= 200; i++) {
-            String item = Integer.toString(i);
+            //String item = Integer.toString(i);
+            String item = text;
             items.add(item);
         }
 

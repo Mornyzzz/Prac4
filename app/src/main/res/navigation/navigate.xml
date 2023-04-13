@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:startDestination="@id/blankFragment">
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.example.prac4.BlankFragment"
+        android:label="Blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_blank_to_list"
+            app:destination="@id/list_frag" />
+        <action
+            android:id="@+id/action_blank_to_recycler"
+            app:destination="@id/recycler_frag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/list_frag"
+        android:name="com.example.prac4.ListFragment"
+        android:label="Blank"
+        tools:layout="@layout/fragment_list" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/recycler_frag"
+        android:name="com.example.prac4.RecyclerFragment"
+        android:label="Blank"
+        tools:layout="@layout/fragment_recycler" >
+    </fragment>
+
+</navigation>
